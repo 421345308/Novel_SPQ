@@ -1,0 +1,2 @@
+占位：此文件夹用于存放主角盟友/战友人物卡。
+每新增一位角色，复制 `02_characters/_character_template.md` 到本目录，命名为角色代号.md。

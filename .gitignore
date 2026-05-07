@@ -1,0 +1,33 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node
+node_modules/
+npm-debug.log*
+
+# 临时文件
+*.tmp
+*.bak
+*.log
+*.orig
+
+# 草稿/私密输出
+06_output/drafts/
+06_output/_private/
+
+# AI 缓存
+.ai_cache/
+.claude_cache/
+
+# 系统
+Thumbs.db
+ehthumbs.db
