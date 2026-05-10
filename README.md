@@ -111,11 +111,33 @@
 3. AI 按 9 步 SOP：
    - 在 03_plot/.../ch_XXX.md 填规划
    - 正文写入 06_output/volume_XX/ch_XXX.md
-4. 审阅 → 通过定稿；不过则修改 beat 或重写
-5. AI 更新连续性文件（state_tracker / power_ledger / foreshadowing / loose_ends）
+4. **跑脚本检查**：python3 tools/check_all.py 06_output/volume_XX/ch_XXX.md
+   - check_style    → 字数 / 句长 / 禁词 / 解释句 / 武侠对白
+   - check_continuity → 境界一致性 / 角色修为 / 彼岸禁令
+   - check_modal    → 修真感 ≥ 2 类（调性铁律）
+   **必须全过**，否则 AI 回头修
+5. 审阅 → 通过定稿；不过则修改 beat 或重写
+6. AI 更新连续性文件（state_tracker / power_ledger / foreshadowing / loose_ends）
 ```
 
 **重要**：`03_plot/` 只放规划，`06_output/` 放正文，严格分离。
+
+### 脚本检查工具（`tools/`）
+
+```bash
+# 单章检查
+python3 tools/check_all.py 06_output/volume_01_qingyu/ch_004.md
+
+# 整卷检查
+python3 tools/check_all.py 06_output/volume_01_qingyu/
+
+# 单项检查
+python3 tools/check_style.py      文件或目录
+python3 tools/check_continuity.py 文件或目录
+python3 tools/check_modal.py      文件或目录
+```
+
+**机械约束已迁移到脚本**：原本写在 `CLAUDE.md` / `style_guide.md` 里的"字数 3000-4000、平均句长 18-28、禁词列表（地球/手机/yyds/只见/忽然之间）、画蛇添足解释句（——这是.../那一刻他明白了...）、武侠程式化对白、生造境界路径名"等条款，**全部由脚本检查，不再占用 AI 写作时的注意力**。
 
 ---
 
